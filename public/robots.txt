@@ -1,0 +1,24 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api
+Disallow: /404
+Disallow: /500
+Disallow: /_next
+Disallow: /static
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Host
+Host: https://www.mudoclubargenteuil.fr
+
+# Sitemaps
+Sitemap: https://www.mudoclubargenteuil.fr/sitemap.xml
+Sitemap: https://www.mudoclubargenteuil.fr/sitemap-0.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Cache
+Cache-Control: max-age=3600

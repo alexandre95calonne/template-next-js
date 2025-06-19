@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Syne";
+    src: url("../assets/fonts/syne/Syne-VariableFont_wght.ttf")
+      format("truetype");
+    font-weight: 400 800;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Anton";
+    src: url("../assets/fonts/anton/Anton-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+}

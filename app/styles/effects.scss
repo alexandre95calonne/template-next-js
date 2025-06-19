@@ -1,0 +1,27 @@
+.underlineEffect {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 1px;
+    left: 0;
+    background-image: linear-gradient(
+      90deg,
+      #f9f383 0%,
+      #f14553 50%,
+      #19477e 100%
+    );
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
