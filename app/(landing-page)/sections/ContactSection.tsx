@@ -10,18 +10,18 @@ import { z } from "zod";
 const contactSchema = z.object({
   name: z
     .string()
-    .min(2, "Le nom doit contenir au moins 2 caractères")
-    .max(50, "Le nom ne doit pas dépasser 50 caractères"),
+    .min(2, "Name must contain at least 2 characters")
+    .max(50, "Name must not exceed 50 characters"),
   email: z
     .string()
-    .email("Adresse email invalide")
-    .min(5, "L'email doit contenir au moins 5 caractères")
-    .max(100, "L'email ne doit pas dépasser 100 caractères"),
+    .email("Invalid email address")
+    .min(5, "Email must contain at least 5 characters")
+    .max(100, "Email must not exceed 100 characters"),
   message: z
     .string()
-    .min(5, "Votre message doit contenir au moins 5 caractères")
-    .max(1000, "Votre message ne doit pas dépasser 1000 caractères"),
-  honeypot: z.string().max(0, "Champ invalide").optional(),
+    .min(5, "Your message must contain at least 5 characters")
+    .max(1000, "Your message must not exceed 1000 characters"),
+  honeypot: z.string().max(0, "Invalid field").optional(),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -59,15 +59,15 @@ export const ContactSection = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.error("Erreur détaillée:", errorData);
-        throw new Error(errorData.error || "Erreur lors de l'envoi");
+        console.error("Detailed error:", errorData);
+        throw new Error(errorData.error || "Error sending message");
       }
 
       reset();
       setFormSubmitted(true);
     } catch (error) {
-      console.error("Erreur complète:", error);
-      alert(error instanceof Error ? error.message : "Une erreur est survenue");
+      console.error("Complete error:", error);
+      alert(error instanceof Error ? error.message : "An error occurred");
     } finally {
       setIsSubmitting(false);
     }
@@ -78,12 +78,12 @@ export const ContactSection = () => {
       <div className="grid w-full grid-cols-1 gap-0 lg:grid-cols-2 lg:gap-24">
         <div className="flex flex-col gap-[32px]">
           <div className="flex flex-col gap-[18px]">
-            <h2 className="font-anton text-[26px] text-secondary md:text-[32px]">
-              Un projet ? Contactez-nous !
+            <h2 className="font-syne text-[26px] text-secondary md:text-[32px]">
+              Template Contact Section
             </h2>
             <p className="text-lg text-secondary/75">
-              Confiez-nous la pose de vos clôtures et portails, nous
-              garantissons une réponse en 48h.
+              This is a demo contact form for the Next.js template. Replace with
+              your actual contact information.
             </p>
           </div>
 
@@ -119,23 +119,22 @@ export const ContactSection = () => {
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-tertiary">
                   <Icon icon="mdi:check" className="h-8 w-8 text-tertiary" />
                 </div>
-                <h3 className="mb-4 font-anton text-2xl text-secondary">
-                  Message envoyé !
+                <h3 className="mb-4 font-syne text-2xl text-secondary">
+                  Message sent!
                 </h3>
                 <p className="mb-8 text-secondary/75">
-                  Merci de nous avoir contacté. Nous vous répondrons dans les
-                  meilleurs délais.
+                  Thank you for contacting us. We'll get back to you as soon as
+                  possible.
                 </p>
                 <PrimaryButton
-                  text="NOUVEAU MESSAGE"
+                  text="NEW MESSAGE"
                   onClick={() => setFormSubmitted(false)}
-                  variant="TertiaryWithIcon"
                 />
               </div>
             ) : (
               <>
-                <h3 className="mb-6 font-anton text-2xl text-secondary">
-                  Bonjour,
+                <h3 className="mb-6 font-syne text-2xl text-secondary">
+                  Contact Form
                 </h3>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -152,7 +151,7 @@ export const ContactSection = () => {
                   <div>
                     <input
                       type="text"
-                      placeholder="Votre nom"
+                      placeholder="Your name"
                       {...register("name")}
                       className="w-full rounded-xl border border-tertiary px-4 py-3 text-secondary/75 placeholder-secondary/75 focus:border-tertiary focus:outline-none focus:ring-2 focus:ring-tertiary/10"
                     />
@@ -166,7 +165,7 @@ export const ContactSection = () => {
                   <div>
                     <input
                       type="email"
-                      placeholder="Votre mail"
+                      placeholder="Your email"
                       {...register("email")}
                       className="w-full rounded-xl border border-tertiary px-4 py-3 text-secondary/75 placeholder-secondary/75 focus:border-tertiary focus:outline-none focus:ring-2 focus:ring-tertiary/10"
                     />
@@ -179,7 +178,7 @@ export const ContactSection = () => {
 
                   <div>
                     <textarea
-                      placeholder="Votre message"
+                      placeholder="Your message"
                       rows={4}
                       {...register("message")}
                       className="w-full rounded-xl border border-tertiary px-4 py-3 text-secondary/75 placeholder-secondary/75 focus:border-tertiary focus:outline-none focus:ring-2 focus:ring-tertiary/10"
@@ -198,11 +197,11 @@ export const ContactSection = () => {
                           icon="mdi:loading"
                           className="h-4 w-4 animate-spin"
                         />
-                        <span>Envoi en cours...</span>
+                        <span>Sending...</span>
                       </div>
                     ) : (
                       <PrimaryButton
-                        text="ENVOYER"
+                        text="SEND"
                         onClick={handleSubmit(onSubmit)}
                       />
                     )}
