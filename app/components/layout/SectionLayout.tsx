@@ -20,10 +20,10 @@ export const SectionLayout = ({
     <section
       id={id}
       className={cn(
-        "flex w-full flex-col items-center",
+        "flex w-full flex-col items-center justify-center",
         !noPaddingX && "px-4 ph:px-24 md:px-48 lg:px-72 xl:px-96",
         !noPaddingY && "py-12",
-        className,
+        className
       )}
     >
       {children}

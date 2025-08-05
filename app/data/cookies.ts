@@ -10,69 +10,69 @@ export interface CookieArticle {
 
 export const cookiesData: CookieArticle[] = [
   {
-    title: "Notre Politique de Cookies",
+    title: "Our Cookie Policy",
     content: [
       {
         mainText:
-          "Le site artisan-clotures-portails.com utilise uniquement des cookies essentiels pour garantir son bon fonctionnement. Nous respectons votre vie privée et n'utilisons aucun cookie publicitaire ou de traçage.",
+          "This Next.js template uses only essential cookies to ensure its proper functioning. We respect your privacy and do not use any advertising or tracking cookies.",
       },
     ],
   },
   {
-    title: "Cookies Essentiels",
+    title: "Essential Cookies",
     content: [
       {
-        mainText: "Nous utilisons uniquement des cookies techniques pour :",
+        mainText: "We only use technical cookies for:",
       },
       {
         bulletPoints: [
-          "Maintenir votre session sécurisée",
-          "Mémoriser vos préférences de navigation",
-          "Assurer le bon fonctionnement du site",
+          "Maintaining your secure session",
+          "Remembering your navigation preferences",
+          "Ensuring the proper functioning of the site",
         ],
       },
     ],
   },
   {
-    title: "Aucun Tracking",
+    title: "No Tracking",
     content: [
       {
-        mainText: "Nous nous engageons à :",
+        mainText: "We are committed to:",
       },
       {
         bulletPoints: [
-          "Ne pas utiliser de cookies publicitaires",
-          "Ne pas partager vos données avec des tiers",
-          "Ne pas intégrer de services de tracking externes",
-          "Ne pas revendre vos informations",
+          "Not using advertising cookies",
+          "Not sharing your data with third parties",
+          "Not integrating external tracking services",
+          "Not reselling your information",
         ],
       },
     ],
   },
   {
-    title: "Vos Droits",
+    title: "Your Rights",
     content: [
       {
-        mainText: "En tant qu'utilisateur, vous pouvez à tout moment :",
+        mainText: "As a user, you can at any time:",
       },
       {
         bulletPoints: [
-          "Configurer votre navigateur pour refuser les cookies (cela peut affecter certaines fonctionnalités)",
-          "Supprimer les cookies existants via les paramètres de votre navigateur",
-          "Naviguer en mode privé pour limiter le stockage des cookies",
+          "Configure your browser to refuse cookies (this may affect some features)",
+          "Delete existing cookies through your browser settings",
+          "Browse in private mode to limit cookie storage",
         ],
       },
     ],
   },
   {
-    title: "Questions ?",
+    title: "Questions?",
     content: [
       {
         mainText:
-          "Pour toute question concernant notre utilisation des cookies, contactez-nous à :",
+          "For any questions regarding our use of cookies, contact us at:",
       },
       {
-        contactInfo: "agence@virtuosa.fr",
+        contactInfo: "contact@example.com",
       },
     ],
   },

@@ -27,11 +27,6 @@ module.exports = {
       "2xl": "1536px",
     },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
         primary: "#FDFDFD",
         secondary: "#121212",
@@ -40,8 +35,7 @@ module.exports = {
         white: "#FFFFFF",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        anton: ["Anton", "sans-serif"],
+        syne: ["Syne", "sans-serif"],
       },
       spacing: {
         24: "24px",
@@ -57,21 +51,6 @@ module.exports = {
         144: "144px",
         156: "156px",
         168: "168px",
-      },
-      keyframes: {
-        "scrolling-banner": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-50% - var(--gap)/2))" },
-        },
-        "scrolling-banner-vertical": {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(calc(-50% - var(--gap)/2))" },
-        },
-      },
-      animation: {
-        "scrolling-banner": "scrolling-banner var(--duration) linear infinite",
-        "scrolling-banner-vertical":
-          "scrolling-banner-vertical var(--duration) linear infinite",
       },
     },
   },
